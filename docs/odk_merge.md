@@ -41,5 +41,23 @@ output file is in OSM XML format, and contains modified entries where
 existing data has the new tags added.
 
 ## Examples
+**Example 1:** 
+Merge ODK data with existing OSM data for a specific area:
 
-    ./odk_merge.py -f pg:osm -c buildings.osm -b boundary.geojson
+    ./odk_merge.py -f existing_osm_data.osm -c collected_data.csv -o merged_data.osm
+
+This command merges the ODK data in `collected_data.csv` with the existing OSM data in `existing_osm_data.osm` and outputs the result to `merged_data.osm`.
+
+**Example 2:**
+Merge ODK data with OSM database:
+
+    ./odk_merge.py -f pg:osm_database -c collected_data.csv -o merged_data.osm
+
+This command merges the ODK data in `collected_data.csv` with the OSM data in the database named `osm_database` and outputs the result to merged_data.osm.
+
+**Example 3:**
+Limit the merge to a specific boundary:
+
+    ./odk_merge.py -f existing_osm_data.osm -c collected_data.csv -o merged_data.osm -b boundary.geojson
+
+This command merges the ODK data in `collected_data.csv` with the existing OSM data in `existing_osm_data.osm`, but only within the boundary defined by `boundary.geojson`. The output is saved to `merged_data.osm`.
