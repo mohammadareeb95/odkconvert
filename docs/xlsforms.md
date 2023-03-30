@@ -1,4 +1,4 @@
-# Improving XLSXForms
+# Improving XLSForms
 
 ## Document Summary
 
@@ -13,16 +13,16 @@ Technical Depth: deep dive
 
 ## Background
 
-[XLSXForms](https://xlsform.org/en/) are used by [OpenDataKit
+[XLSForms](https://xlsform.org/en/) are used by [OpenDataKit
 (ODK)](https://www.opendatakit.org) to define the input fields for
 multiple mobile data collection apps. They have a rather complex
-syntax, since the XLSXForms are edited as a spreadsheet. Most of the
-XLSXForms I’ve collected don’t utilize more than the basic
+syntax, since the XLSForms are edited as a spreadsheet. Most of the
+XLSForms I’ve collected don’t utilize more than the basic
 functionality of this format. While there are a few web based front
-ends for creating and editing XLSXForms, they don’t support many of
-the more advanced functionality of XLSXForms. The current only way to
+ends for creating and editing XLSForms, they don’t support many of
+the more advanced functionality of XLSForms. The current only way to
 access this functionality is to use a spreadsheet program. To use the
-XLSXForm with a mobile app it gets converted using a utility program,
+XLSForm with a mobile app it gets converted using a utility program,
 _xls2xform,_ to the XML based XForm used by the apps.
 
 There are two primary mobile apps used at HOT, OpenMapKit
@@ -30,7 +30,7 @@ There are two primary mobile apps used at HOT, OpenMapKit
 ([ODK](https://getodk.org/)). OMK uses the same XLSX format as ODK, so
 any comments apply to
 both. [KoboToolKit](https://www.kobotoolbox.org/) also supports
-XLSXForms. This document explains how to improve XLSXForms for more
+XLSForms. This document explains how to improve XLSForms for more
 efficient data collection. Efficiency lets you collect more good data
 in less time.
 
@@ -60,12 +60,12 @@ values in the **osm** sheet are designed to be more closely matched
 to the tagging scheme used by [OpenStreetMap
 (OSM)](https://www.openstreetmap.org/).
 
-# XLSXForm Syntax
+# XLSForm Syntax
 
-An [XLSXForm](https://xlsform.org/en/) is the source file for OMK and
+An [XLSForm](https://xlsform.org/en/) is the source file for OMK and
 ODK based tools. This is edited in a spreadsheet program like
 LIbreCalc or Excel. There are also online build tools, but they fail
-to utilize the full functionality of XLSXForms. The python program
+to utilize the full functionality of XLSForms. The python program
 _xls2xform_ converts the spreadsheet to the format used by ODK
 Collect. You can also upload the spreadsheet to the ODK Central
 server, and it will convert it.
@@ -132,7 +132,7 @@ the _choices_ sheet, which becomes the value.
 
 ODK supports multiple options to change the layout of the input fields
 on the screen. In the
-[XLSXForm](https://docs.getodk.org/form-question-types/), this is
+[XLSForm](https://docs.getodk.org/form-question-types/), this is
 under the **appearance** column. There’s many possible options
 available to change the layout, but here’s a summary of the primary
 ones.
@@ -170,7 +170,7 @@ the current mapping task.
   of a question, and the value to test against, which is one of the
   select values.
 
-In the XLSXForm, the spreadsheet should look like this. The amenity
+In the XLSForm, the spreadsheet should look like this. The amenity
 menu is only displayed if the answer to the “what type of building is
 this” is “commercial”.
 
@@ -378,10 +378,10 @@ the user is located. If you want to use a basemap and tap on the
 screen where you want to get the location, add **placement-map** into
 the **appearances** column.
 
-After doing these three steps, your XLSXForm is converted to not use
+After doing these three steps, your XLSForm is converted to not use
 the OMK app anymore.
 
-# XLSXForm Suggestions
+# XLSForm Suggestions
 
 Since often mobile data collection is many of the same type of data,
 setting defaults helps reduce the amount of user actions that need to
